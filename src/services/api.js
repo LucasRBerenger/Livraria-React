@@ -1,5 +1,5 @@
 //const urlBase = 'http://localhost:3002';
-const urlBase = 'http://localhost:https://quixotic-valiant-factory.glitch.me';
+const urlBase = 'https://quixotic-valiant-factory.glitch.me';
 export const postLivros = async (livro) => {
   var Header = new Headers();
   Header.append("Content-Type", "application/json");
