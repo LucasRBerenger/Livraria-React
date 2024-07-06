@@ -21,14 +21,15 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    if (refresh) getLivrosApi();
+    if (refresh)
+      getLivrosApi().then((result) =>
+        setLivros(separaLivroPorCategoria(result))
+      );
   }, [refresh]);
 
   const getLivrosApi = async () => {
-    await getLivros().then((result) =>
-      setLivros(separaLivroPorCategoria(result))
-    );
-    console.log("abc");
+    await getLivros().then((result) => result);
+    //console.log("abc");
   };
 
   const separaLivroPorCategoria = (livros) => {
